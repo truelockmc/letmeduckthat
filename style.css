@@ -5,6 +5,11 @@
 
 /* ── Tokens ─────────────────────────────────────────────── */
 :root {
+    --font-sans:
+        "Syne", "Nunito", "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    --font-mono:
+        "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+
     --duck-orange: #de5833;
     --duck-accent: #ff7043;
 
@@ -52,7 +57,7 @@
 
 /* ── Body ────────────────────────────────────────────────── */
 body {
-    font-family: "Syne", sans-serif;
+    font-family: var(--font-sans);
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -160,7 +165,7 @@ body::before {
     border: 1.5px solid var(--border);
     border-radius: var(--radius-pill);
     padding: 0.45rem 1rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--text-muted);
     margin-bottom: 2rem;
@@ -222,7 +227,7 @@ body::before {
 
 /* Tagline */
 .tagline {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--text-muted);
     margin-bottom: 1rem;
@@ -256,7 +261,7 @@ body::before {
     border-radius: var(--radius-lg);
     padding: 1.15rem 1.6rem;
     padding-right: 155px;
-    font-family: "Syne", sans-serif;
+    font-family: var(--font-sans);
     font-size: 1.05rem;
     color: var(--text);
     outline: none;
@@ -284,7 +289,7 @@ body::before {
     border: none;
     border-radius: var(--radius-md);
     padding: 0.65rem 1.1rem;
-    font-family: "Syne", sans-serif;
+    font-family: var(--font-sans);
     font-weight: 700;
     font-size: 0.88rem;
     color: #fff;
@@ -321,7 +326,7 @@ body::before {
 }
 
 .result-label {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -330,7 +335,7 @@ body::before {
 }
 
 .result-url {
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--duck-orange);
     word-break: break-all;
@@ -352,7 +357,7 @@ body::before {
     border: 1.5px solid var(--border);
     border-radius: var(--radius-sm);
     padding: 0.65rem 1rem;
-    font-family: "Syne", sans-serif;
+    font-family: var(--font-sans);
     font-weight: 700;
     font-size: 0.82rem;
     color: var(--text);
@@ -387,7 +392,7 @@ body::before {
     bottom: 1.5rem;
     left: 50%;
     transform: translateX(-50%);
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     color: var(--text-faint);
     white-space: nowrap;
@@ -409,7 +414,7 @@ body::before {
     transform: translateX(-50%) translateY(80px);
     background: var(--duck-orange);
     color: #fff;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.82rem;
     font-weight: 600;
     padding: 0.7rem 1.6rem;
@@ -462,7 +467,7 @@ body::before {
     display: inline-block;
     background: var(--duck-orange);
     color: #fff;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.82rem;
     font-weight: 700;
     padding: 0.45rem 1.1rem;
@@ -525,7 +530,7 @@ body::before {
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     padding: 0.35rem 0.8rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-muted);
     overflow: hidden;
@@ -556,7 +561,7 @@ body::before {
     font-size: 0.78rem;
     color: var(--text-faint);
     margin-top: 0.2rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
 }
 
 .ddg-search-wrapper {
@@ -571,7 +576,7 @@ body::before {
     border: 2px solid var(--border);
     border-radius: var(--radius-pill);
     padding: 0.9rem 3.5rem 0.9rem 1.6rem;
-    font-family: "Syne", sans-serif;
+    font-family: var(--font-sans);
     font-size: 1rem;
     color: var(--text);
     text-align: left;
@@ -642,7 +647,7 @@ body::before {
 
 .ddg-redirect-note {
     margin-top: 1rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.75rem;
     color: var(--text-faint);
     min-height: 1.2em;
@@ -650,7 +655,7 @@ body::before {
 
 .back-link {
     margin-top: 2rem;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-muted);
     text-decoration: none;

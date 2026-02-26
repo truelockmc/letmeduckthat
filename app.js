@@ -149,31 +149,30 @@ function startDemo(query) {
     bar.style.borderColor = "var(--duck-orange)";
     icon.classList.add("active");
 
-    setTimeout(startRedirect, 600);
+    setTimeout(startRedirect, 1500);
   }
 
   function startRedirect() {
     progressWrap.classList.add("visible");
-    note.textContent = "Redirecting to DuckDuckGo…";
+    note.textContent = "Redirecting to DuckDuckGo...";
 
     let pct = 0;
     const ddgUrl = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
     const displayUrl = "duckduckgo.com/?q=" + encodeURIComponent(query);
 
     const prog = setInterval(() => {
-      pct = Math.min(pct + 2.5, 100);
+      pct = Math.min(pct + 0.55, 100);
       progressFill.style.width = pct + "%";
 
-      // Update fake URL bar progressively
       if (pct > 30) urlBar.textContent = displayUrl;
 
       if (pct >= 100) {
         clearInterval(prog);
         setTimeout(() => {
           window.location.href = ddgUrl;
-        }, 300);
+        }, 900);
       }
-    }, 22);
+    }, 28);
   }
 
   // Kick off typing after a short pause
