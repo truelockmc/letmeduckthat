@@ -157,8 +157,10 @@ function startDemo(query) {
     note.textContent = "Redirecting to DuckDuckGo...";
 
     let pct = 0;
-    const ddgUrl = "https://duckduckgo.com/?q=" + encodeURIComponent(query);
-    const displayUrl = "duckduckgo.com/?q=" + encodeURIComponent(query);
+    const ddgUrl =
+      "https://duckduckgo.com/?q=" + encodeURIComponent(query) + "&ia=web";
+    const displayUrl =
+      "duckduckgo.com/?q=" + query.trim().replace(/\s+/g, "+") + "&ia=web";
 
     const prog = setInterval(() => {
       pct = Math.min(pct + 0.55, 100);
