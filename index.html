@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Let Me Duck That For You</title>
+        <meta
+            name="description"
+            content="For everyone who can't be bothered to search themselves. Like 'Let Me Google That', but with DuckDuckGo. 🦆"
+        />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦆</text></svg>"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="bg-blobs" aria-hidden="true">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+
+        <!-- ===== HOME PAGE ===== -->
+        <main id="home-page">
+            <div class="hero-badge">
+                <span class="badge-icon">🔍</span>
+                <span
+                    >Like <strong>Let Me Google That</strong>, but private &
+                    with DuckDuckGo</span
+                >
+            </div>
+
+            <div class="duck-logo" aria-hidden="true">🦆</div>
+
+            <h1 class="site-title">Let Me <em>Duck</em> That<br />For You</h1>
+
+            <p class="tagline">// for everyone too lazy to search themselves</p>
+
+            <p class="description">
+                Type a search query, get a link. Send it to whoever asked you
+                the question they could've just looked up.
+            </p>
+
+            <div class="input-container">
+                <label for="query-input" class="sr-only">Search query</label>
+                <input
+                    type="text"
+                    id="query-input"
+                    class="search-input"
+                    placeholder="What should I duck for you?"
+                    autocomplete="off"
+                    spellcheck="false"
+                />
+                <button
+                    class="generate-btn"
+                    id="generate-btn"
+                    onclick="generateLink()"
+                    aria-label="Generate shareable link"
+                >
+                    🦆 Generate Link
+                </button>
+            </div>
+
+            <div class="result-box" id="result-box" aria-live="polite">
+                <div class="result-label">Your shareable link:</div>
+                <div class="result-url" id="result-url"></div>
+                <div class="result-actions">
+                    <button class="action-btn primary" onclick="copyLink()">
+                        📋 Copy Link
+                    </button>
+                    <button class="action-btn" onclick="previewLink()">
+                        👁 Preview
+                    </button>
+                </div>
+                <p class="result-hint">
+                    Send this link to whoever asked you. They'll see a demo
+                    before being redirected to DuckDuckGo.
+                </p>
+            </div>
+
+            <footer class="footer-note">
+                Not affiliated with DuckDuckGo&nbsp;·&nbsp;Inspired by
+                <a
+                    href="https://letmegooglethat.com"
+                    target="_blank"
+                    rel="noopener"
+                    >letmegooglethat.com</a
+                >&nbsp;·&nbsp;Made with sarcasm 🦆
+            </footer>
+        </main>
+
+        <!-- ===== DEMO / ANIMATION PAGE ===== -->
+        <div id="demo-page" aria-hidden="true">
+            <div class="demo-header">
+                <span class="demo-badge">🦆 Someone Ducked this for you</span>
+                <p class="demo-sub">
+                    They wanted you to know you could've looked this up
+                    yourself.
+                </p>
+            </div>
+
+            <div
+                class="browser-window"
+                role="img"
+                aria-label="Browser animation showing DuckDuckGo search"
+            >
+                <div class="browser-chrome">
+                    <div class="browser-dots" aria-hidden="true">
+                        <span class="dot dot-r"></span>
+                        <span class="dot dot-y"></span>
+                        <span class="dot dot-g"></span>
+                    </div>
+                    <div class="browser-url-bar" id="browser-url">
+                        duckduckgo.com
+                    </div>
+                </div>
+
+                <div class="ddg-interface">
+                    <div class="ddg-logo-area">
+                        <div class="ddg-duck" aria-hidden="true">🦆</div>
+                        <div class="ddg-brand">DuckDuckGo</div>
+                        <div class="ddg-brand-tagline">
+                            The search engine that doesn't track you
+                        </div>
+                    </div>
+
+                    <div class="ddg-search-wrapper">
+                        <div
+                            class="ddg-search-bar"
+                            id="ddg-bar"
+                            aria-label="Search bar animation"
+                        >
+                            <span id="typed-text"></span
+                            ><span
+                                class="caret"
+                                id="caret"
+                                aria-hidden="true"
+                            ></span>
+                        </div>
+                        <span
+                            class="ddg-search-icon"
+                            id="search-icon"
+                            aria-hidden="true"
+                            >🔍</span
+                        >
+                    </div>
+
+                    <div
+                        class="progress-bar-wrap"
+                        id="progress-wrap"
+                        role="progressbar"
+                        aria-label="Loading search results"
+                    >
+                        <div class="progress-bar-fill" id="progress-fill"></div>
+                    </div>
+
+                    <p
+                        class="ddg-redirect-note"
+                        id="redirect-note"
+                        aria-live="polite"
+                    ></p>
+                </div>
+            </div>
+
+            <a href="./" class="back-link">← Generate your own Duck link</a>
+        </div>
+
+        <div class="copied-toast" id="toast" role="status" aria-live="polite">
+            ✓ Link copied!
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
