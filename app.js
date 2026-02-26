@@ -1,5 +1,5 @@
 /**
- * LETMEDUCKTHAT  app.js
+ * LETMEDUCKTHAT app.js
  * Handles routing, link generation and the typing demo animation.
  */
 
@@ -27,7 +27,7 @@ function getBaseUrl() {
 }
 
 /* =========================================================
-   HOME PAGE  link generation
+   HOME PAGE: link generation
    ========================================================= */
 document
   .getElementById("query-input")
@@ -112,7 +112,7 @@ function shakeInput() {
 }
 
 /* =========================================================
-   DEMO PAGE, typing animation → redirect
+   DEMO PAGE: typing animation and redirect
    ========================================================= */
 function startDemo(query) {
   const demoPage = document.getElementById("demo-page");
@@ -130,8 +130,8 @@ function startDemo(query) {
   bar.classList.add("typing");
 
   let i = 0;
-  const baseDelay = 70;
-  const jitter = () => baseDelay + Math.random() * 90;
+  const baseDelay = 130;
+  const jitter = () => baseDelay + Math.random() * 120;
 
   function typeNext() {
     if (i <= query.length) {
